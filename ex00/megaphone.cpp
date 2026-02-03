@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 12:19:50 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/03 12:24:41 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/03 12:35:42 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	print_characters(char lowercase)
 {
 	char	uppercase;
 
-	uppercase = lowercase - 32;
+	if (lowercase >= 'a' && lowercase <= 'z')
+		uppercase = lowercase - 32;
+	else
+		uppercase = lowercase;
 	std::cout << uppercase;
 }
 
@@ -26,15 +29,21 @@ int	main(int argc, char **argv)
 	int	i;
 
 	o = 1;
-	while (argv[o])
+	if (argc >= 2)
 	{
-		i = 0;
-		while(argv[o][i])
+		while (argv[o])
 		{
-			print_characters(argv[o][i]);
-			i++;
+			i = 0;
+			while(argv[o][i])
+			{
+				print_characters(argv[o][i]);
+				i++;
+			}
+			o++;
 		}
-		o++;
+		std::cout << "\n";
 	}
+	else
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	return (0);
 }
