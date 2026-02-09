@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 12:19:50 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/03 12:35:42 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/05 20:08:34 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print_characters(char lowercase)
 		uppercase = lowercase - 32;
 	else
 		uppercase = lowercase;
-	std::cout << uppercase;
+	std::cout << uppercase; 
 }
 
 int	main(int argc, char **argv)

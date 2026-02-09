@@ -1,7 +1,7 @@
 CC++ = c++
-C++FLAGS = -Wall -Wextra -Werror -std=c++98
+C++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = megaphone
+NAME = phonebook
 
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
