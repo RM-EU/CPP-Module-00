@@ -3,7 +3,9 @@ C++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 NAME = phonebook
 
-SRCS = megaphone.cpp
+SRCS = Contact.cpp\
+		main.cpp\
+		PhoneBook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
