@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:17:52 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/11 21:49:23 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/12 17:59:55 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main()
 			acces.AddContact();
 		else if (command.compare("EXIT") == 0)
 			break ;
+		else if (command.compare("SEARCH") == 0)
+			acces.Search_command();
 		else
 			std::cout << "not a valid command" << std::endl;
 		// if (command == "EXIT")

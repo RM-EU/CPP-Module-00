@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 16:46:00 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/11 16:22:43 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/12 21:37:37 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ Contact::Contact()
 	nickname = "";
 	phone_number = "";
 	secret = "";
+}
+
+std::string	Contact::getFirstName()
+{
+	return (first_name);
+}
+
+std::string	Contact::getLastName()
+{
+	return (last_name);
+}
+
+std::string	Contact::getNickname()
+{
+	return (nickname);
 }
 
 void	Contact::printcontact()

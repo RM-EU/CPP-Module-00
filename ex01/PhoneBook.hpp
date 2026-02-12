@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 19:09:58 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/10 18:50:24 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/12 17:57:57 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class	PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void AddContact();
+		void	AddContact();
+		void	Search_command();
 };
 
 #endif
