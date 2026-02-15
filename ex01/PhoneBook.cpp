@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:33:55 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/12 22:17:49 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/15 19:32:29 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,34 @@ void	PhoneBook::AddContact()
 
 std::string&	truncate(std::string& str, size_t width)
 {
-	if (str.length() > width)
+	if (str.length() > width - 1)
 	{
-		str.resize(width);
-		return (str);
+		str.resize(width - 1);
+		return (str.append("."));
 	}
 	return (str);
 }
 
 void	PhoneBook::Search_command()
 {
-	Contact	acces;
+	Contact	data;
+	std::string first_name;
+	std::string str1 = "masodik szoveg ami tul hosszu";
 
-	std::cout << "----------|----------|----------|----------|" << std::endl;
-	std::cout << "     Index|First Name| Last Name|   Nickname" << std::endl;
-	std::cout << "--------------------------------------------" << std::endl;
-	std::cout << std::setw(10) << std::right << Contacts[0].getFirstName() << "\n";
+	first_name = data.getFirstName();
+	std::cout << first_name << "\n";
+
+	// std::cout << std::setw(10) << std::right << "Index" << "|";
+	// std::cout << std::setw(10) << std::right << "First Name" << "|";
+	// std::cout << std::setw(10) << std::right << "Last Name" << "|";
+	// std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
+
+
+	
+	// std::cout << "----------|----------|----------|----------|" << std::endl;
+	// std::cout << "     Index|First Name| Last Name|   Nickname" << std::endl;
+	// std::cout << "--------------------------------------------" << std::endl;
+	// std::cout << std::setw(10) << std::right << truncate(first_name, 10) << "|";
+	// std::cout << std::setw(10) << std::right << truncate(str1, 10) << "|" << "\n";
+	
 }
