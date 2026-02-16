@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:33:55 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/15 19:32:29 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/16 21:02:22 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,6 @@ void	PhoneBook::AddContact()
 	index = contact_count % 8;
 	Contacts[index] = Contact(firstname, lastname, nickname, phonenumber, secret);
 	contact_count++;
-	// std::cout << firstname << std::endl;
-	//printing the arrays:
-	int	i = 0;
-	while (i < 8)
-	{
-		std::cout << i << ":contact" << "\n" << "\n";
-		Contacts[i].printcontact();
-		i++;
-	}
 }
 
 
@@ -81,24 +72,46 @@ std::string&	truncate(std::string& str, size_t width)
 
 void	PhoneBook::Search_command()
 {
-	Contact	data;
+	Contact		data;
 	std::string first_name;
-	std::string str1 = "masodik szoveg ami tul hosszu";
+	std::string	last_name;
+	std::string	nickname;
+	int			index;
+	bool		valid_index;
 
-	first_name = data.getFirstName();
-	std::cout << first_name << "\n";
-
-	// std::cout << std::setw(10) << std::right << "Index" << "|";
-	// std::cout << std::setw(10) << std::right << "First Name" << "|";
-	// std::cout << std::setw(10) << std::right << "Last Name" << "|";
-	// std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
-
-
-	
-	// std::cout << "----------|----------|----------|----------|" << std::endl;
-	// std::cout << "     Index|First Name| Last Name|   Nickname" << std::endl;
-	// std::cout << "--------------------------------------------" << std::endl;
-	// std::cout << std::setw(10) << std::right << truncate(first_name, 10) << "|";
-	// std::cout << std::setw(10) << std::right << truncate(str1, 10) << "|" << "\n";
-	
+	std::cout << std::setw(10) << std::right << "Index" << "|";
+	std::cout << std::setw(10) << std::right << "First Name" << "|";
+	std::cout << std::setw(10) << std::right << "Last Name" << "|";
+	std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
+	index  = 0 ;
+	while (index < contact_count)
+	{
+		first_name = Contacts[index].getFirstName();
+		last_name = Contacts[index].getLastName();
+		nickname = Contacts[index].getNickname();
+		std::cout << std::setw(10) << std::right << index << "|";
+		std::cout << std::setw(10) << std::right << truncate(first_name, 10) << "|";
+		std::cout << std::setw(10) << std::right << truncate(last_name, 10) << "|";
+		std::cout << std::setw(10) << std::right << truncate(nickname, 10) << std::endl;
+		index++;
+	}
+	valid_index = false;
+	while(!valid_index)
+	{
+		std::cout << "Choose an index to display!" << std::endl;
+		std::cin >> index;
+		std::cin.ignore();
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(1000, '\n');
+			std::cout << "index should be an integer" << std::endl;
+			continue;
+		}
+		if (index < 0 || index >= contact_count)
+			std::cout << "index is out of range" << std::endl;
+		else
+			valid_index = true;
+	}
+	Contacts[index].printcontact();
 }
