@@ -12,6 +12,8 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
+#include <iostream>
+
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
@@ -36,6 +38,8 @@ public:
 	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
+	// int	getIndex();
+	// int	getAmount();
 
 
 private:
@@ -46,13 +50,14 @@ private:
 	static int	_totalNbWithdrawals;
 
 	static void	_displayTimestamp( void );
-
+	
 	int				_accountIndex;
 	int				_amount;
 	int				_nbDeposits;
 	int				_nbWithdrawals;
-
+	
 	Account( void );
+	friend	std::ostream& operator<<(std::ostream& os, const Account acc);
 
 };
 

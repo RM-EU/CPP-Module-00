@@ -3,8 +3,9 @@ C++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 NAME = account
 
-SRCS = Account.cpp\
-		tests.cpp
+SRCS = Account.cpp \
+		main.cpp
+#		tests.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
