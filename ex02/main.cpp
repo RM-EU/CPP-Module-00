@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 15:02:46 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/19 18:12:55 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/19 22:59:49 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ int	main(void)
 	accounts_t::iterator	acc_begin	= accounts.begin();
 	accounts_t::iterator	acc_end		= accounts.end();
 
-	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus) );
+	int	const			d[]			= { 5, 765, 564, 2, 87, 23, 9, 20 };
+	size_t const		d_size( sizeof(d) / sizeof(int) );
+	ints_t				deposits( d, d + d_size );
+	ints_t::iterator	dep_begin	= deposits.begin();
+	ints_t::iterator	dep_end		= deposits.end();
+
+	// Account::displayAccountsInfos();
+	// std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus) );
+
+	for ( acc_int_t it( acc_begin, dep_begin );
+		  it.first != acc_end && it.second != dep_end;
+		  ++(it.first), ++(it.second) ) {
+
+		(*(it.first)).makeDeposit( *(it.second) );
+	}
 }

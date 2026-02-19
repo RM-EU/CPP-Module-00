@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 21:12:50 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/19 18:47:31 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/19 23:10:11 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,19 @@ void	Account::displayStatus() const
 	std::cout << "withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
-void	makeDeposit( int deposit )
+void	Account::makeDeposit( int deposit )
 {
-	
+	int	p_amount;
+
+	p_amount = _amount;
+	_amount += deposit;
+	_nbDeposits++;
+
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "p_amount:" << p_amount << ";";
+	std::cout << "deposit:" << deposit << ";";
+	std::cout << "amount:" << _amount << ";";
+	std::cout << "nb_deposits:" << _nbDeposits << ";" << std::endl;	
 }
 
 // int	Account::getIndex()
