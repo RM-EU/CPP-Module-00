@@ -1,18 +1,18 @@
-CC++ = c++
-C++FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 NAME = account
 
 SRCS = Account.cpp \
-		main.cpp
-#		tests.cpp \
+		tests.cpp \
+#		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC++) $(C++FLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 
 clean:

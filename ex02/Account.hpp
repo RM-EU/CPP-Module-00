@@ -13,6 +13,7 @@
 #define __ACCOUNT_H__
 
 #include <iostream>
+#include <ctime>
 
 // ************************************************************************** //
 //                               Account Class                                //
@@ -33,6 +34,7 @@ public:
 
 	Account( int initial_deposit );
 	~Account( void );
+
 
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal );
@@ -57,7 +59,6 @@ private:
 	int				_nbWithdrawals;
 	
 	Account( void );
-	friend	std::ostream& operator<<(std::ostream& os, const Account acc);
 
 };
 
