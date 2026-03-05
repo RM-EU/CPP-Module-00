@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:17:52 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/24 21:08:50 by mracz            ###   ########.fr       */
+/*   Updated: 2026/03/05 17:44:02 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main()
 	PhoneBook acces;
 	std::string	command;
 
+	std::cout << "Use the following commands: ADD or SEARCH or EXIT" << std::endl;
 	while (1)
 	{
 		std::cout << "enter a command" << std::endl;

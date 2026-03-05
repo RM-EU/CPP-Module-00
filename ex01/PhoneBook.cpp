@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:33:55 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/16 21:02:22 by mracz            ###   ########.fr       */
+/*   Updated: 2026/02/27 18:41:15 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	PhoneBook::Search_command()
 	std::cout << std::setw(10) << std::right << "Last Name" << "|";
 	std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
 	index  = 0 ;
-	while (index < contact_count)
+	while (index < contact_count && index < 8)
 	{
 		first_name = Contacts[index].getFirstName();
 		last_name = Contacts[index].getLastName();
