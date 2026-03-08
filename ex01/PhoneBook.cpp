@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:33:55 by mracz             #+#    #+#             */
-/*   Updated: 2026/03/08 15:15:39 by mracz            ###   ########.fr       */
+/*   Updated: 2026/03/08 18:19:13 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	PhoneBook::Search_command()
 	std::string	nickname;
 	int			index;
 	bool		valid_index;
-	std::string	inp;
 
 	std::cout << std::setw(10) << std::right << "Index" << "|";
 	std::cout << std::setw(10) << std::right << "First Name" << "|";
@@ -100,14 +99,25 @@ void	PhoneBook::Search_command()
 	valid_index = false;
 	while(!valid_index)
 	{
+		if (first_name.empty())
+			break ;
 		std::cout << "Choose an index to display!" << std::endl;
 		std::cin >> index;
-		getline_wrapped(inp);
-		index = atoi(inp.c_str());
+		std::cin.ignore();
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(1000, '\n');
+			std::cout << "index should be an integer" << std::endl;
+			continue;
+		}
 		if (index < 0 || index >= contact_count)
+		{
 			std::cout << "index is out of range" << std::endl;
+		}
 		else
 			valid_index = true;
+		if (valid_index)
+			Contacts[index].printcontact();
 	}
-	Contacts[index].printcontact();
 }
