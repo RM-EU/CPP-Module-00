@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 19:10:24 by mracz             #+#    #+#             */
-/*   Updated: 2026/02/24 21:08:19 by mracz            ###   ########.fr       */
+/*   Updated: 2026/03/08 15:16:14 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ class	Contact
 		std::string	getLastName();
 		std::string	getNickname();
 };
+
+void getline_wrapped(std::string& inp);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mracz <mracz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:17:52 by mracz             #+#    #+#             */
-/*   Updated: 2026/03/05 17:44:02 by mracz            ###   ########.fr       */
+/*   Updated: 2026/03/08 15:16:01 by mracz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 #include "Contact.hpp"
 #include <string>
 #include <iostream>
+#include <cstdlib>
+
+void getline_wrapped(std::string& inp)
+{
+  if (!std::getline(std::cin, inp)) {
+    if (std::cin.eof()) {
+      std::cout << "\nExiting..." << std::endl;
+      exit(0);
+    } else if (std::cin.bad())
+      exit(1);
+    else
+      return;
+  }
+}
 
 int	main()
 {
